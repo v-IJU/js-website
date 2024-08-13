@@ -1,0 +1,16 @@
+JS
+
+•	Functions
+•	Variable (var , let ,const)
+.	Template literals
+•	Map,filter,reduce,foreach,slice,splice
+•	insertAdjacentHTML
+•	querySelector
+•	querySelectorAll
+•	addEventListener(click,change,keyup)
+•	Js Fetch API
+•	Arrow Function
+•	Js import and export
+•	Try catch block
+•	Throw exception
+•	Js class and object 
