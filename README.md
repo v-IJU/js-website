@@ -7,6 +7,8 @@ git clone https://github.com/v-IJU/js-website.git
 ## Create New Branch
 
 ```shell
+git checkout development
+
 git checkout -b task1
 ```
 
