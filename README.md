@@ -24,4 +24,4 @@ npm start
 
 ## Task 1
 
-After Successfully Run The Project inside public folder open Design/websitedesign Folder there is some images to develop the UI
+After Successfully Run The Project inside public folder open content/websitedesign Folder develop the UI Website contents inside content.md available all the images available in the content folder
