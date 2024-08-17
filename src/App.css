@@ -128,7 +128,7 @@
   margin-left: 13px;
   border-radius: 10px;
   color: white;
-  border: none; 
+  border: none;
   position: relative;
   z-index: 999;
 }
@@ -258,6 +258,34 @@
 .gal-col2 .col {
   padding: 10px 8px !important;
 }
+.gal-img-container {
+  position: relative;
+}
+.gal-text {
+  position: absolute;
+  text-align: center;
+  color: white;
+  padding: 0 10px;
+  font-size: 13px;
+  font-family: Poppins;
+  display: none;
+  bottom: 0;
+}
+.text-pop{
+  display: block;
+  animation: gal-text 500ms ease-in forwards;
+}
+@keyframes gal-text {
+  from{
+    bottom: 5px;
+    opacity: .5;
+  }
+  to{
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
 
 /* PRICING */
 .pricing {
@@ -320,7 +348,7 @@
 }
 .plan-text {
   color: #a4a4a7;
-  font-size: 15px;
+  font-size: 14px;
   padding: 20px 0;
 }
 .package {
@@ -329,6 +357,11 @@
 }
 .package div > * {
   margin: 0 5px;
+  word-wrap: break-word;
+}
+.package p{
+  font-size: 14px;
+  font-weight: 300;
 }
 .package-btn {
   background-color: #e67e22;
@@ -390,60 +423,60 @@
   color: #757575;
 }
 .footer-contct {
-    color: #a1a4a4;
+  color: #a1a4a4;
 }
-.copyright span{
-    font-size: 10px;
+.copyright span {
+  font-size: 10px;
 }
-.copyright{
-    color: #a1a4a4;
-    margin-top: 33%;
+.copyright {
+  color: #a1a4a4;
+  margin-top: 33%;
 }
 /* MODAL */
 
-.signup-h1{
+.signup-h1 {
   font-weight: 600;
-  padding:10px 0;
+  padding: 10px 0;
 }
-.signup-p1{
+.signup-p1 {
   font-family: Poppins;
   font-size: 14px;
   line-height: 17px;
 }
-.modal{
-    position: relative;
+.modal {
+  position: relative;
 }
-.modal-body{
+.modal-body {
   padding: 0 !important;
   padding-left: 20px !important;
 }
-.modal-container{
+.modal-container {
   padding: 0 !important;
 }
-.modal-content{
+.modal-content {
   width: 100%;
   background-color: #0000 !important;
 }
-.signup-bg{
-  background-color:#eb8832;
+.signup-bg {
+  background-color: #eb8832;
   border-radius: 10px;
   align-items: center;
 }
-.modal-col1{ 
+.modal-col1 {
   width: 100%;
 }
-.modal-btn{
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    z-index: 999;
+.modal-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 999;
 }
-.modal-submit{
-   background-color: #b05709 !important;
-   border: none !important;
-   padding: 6px 0 !important;
-   width: 100%;
-   margin-bottom: 2px;
+.modal-submit {
+  background-color: #b05709 !important;
+  border: none !important;
+  padding: 6px 0 !important;
+  width: 100%;
+  margin-bottom: 2px;
 }
 .custom-select {
   appearance: none !important; /* Standard property to remove the default arrow */
@@ -454,23 +487,23 @@
   padding: 8px 13px;
   border: none !important;
 }
-.select-custom-container{
+.select-custom-container {
   position: relative;
 }
-.select-custom-icon{
+.select-custom-icon {
   position: absolute;
   font-size: 25px;
   right: -5px;
   top: 7px;
 }
-.signup-img{
+.signup-img {
   width: 100%;
   height: 53vh;
   object-fit: cover !important;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.signup-col2{
+.signup-col2 {
   padding: 0 !important;
 }
 
@@ -479,7 +512,7 @@
   margin-right: auto;
   margin-left: auto;
 }
-.close-btn{
+.close-btn {
   position: absolute;
   top: 14px;
   right: 11px;
@@ -487,7 +520,7 @@
   color: white;
   border: none;
 }
-.form-label{
+.form-label {
   font-size: 13px;
   font-weight: 700;
   font-family: Poppins;

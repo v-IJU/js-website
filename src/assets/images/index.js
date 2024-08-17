@@ -16,4 +16,3 @@ import galleryImg6 from './gallery/gallery-6.jpg'
 export const logo = [img1, img2, img3, img4, img5];
 export const navLogo = {navImg}
 export const mealsImg = [meal1, meal2]
-export const gallery = [galleryImg1,galleryImg2, galleryImg3, galleryImg4, galleryImg5, galleryImg6]

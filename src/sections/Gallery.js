@@ -1,7 +1,18 @@
-import React from 'react'
-import { gallery } from '../assets/images'
-
+import React, { useState } from 'react'
+import { gallery } from '../constants'
 const Gallery = () => {
+
+const [isMouseEnter, setIsMOuseEnter] = useState("")
+
+const handleMouseEnter = (id) =>{
+  setIsMOuseEnter(id)
+}
+const handleMouseLeave = () =>{
+  setIsMOuseEnter("")
+}
+
+console.log(isMouseEnter);
+
   return (
    <section className='container-fluid gallery pt-1 pb-2'>
     <div className='row'>
@@ -12,9 +23,10 @@ const Gallery = () => {
       </div>
       <div className='col-6 gal-col2'>
         <div className='row row-cols-3 '>
-        {gallery.map((gall, index)=>(
-          <div className='col' key={index}>
-            <img src={gall} className='gall-img' alt={`gallery img-${index}`} />
+        {gallery.map((gall)=>(
+          <div className='col gal-img-container' key={gall.id}>
+            <img src={gall.img} onMouseEnter={()=>{handleMouseEnter(gall.id)}} onMouseLeave={handleMouseLeave} className='gall-img' alt={`gallery img-${gall.id}`} />
+            <p className={`gal-text ${isMouseEnter === gall.id ? 'text-pop' : ''}`}>{gall.text}</p>
           </div>
         ))}
         </div>

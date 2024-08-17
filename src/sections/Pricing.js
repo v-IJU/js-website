@@ -39,7 +39,7 @@ const Pricing = () => {
                   {price.meal ? <div className="d-flex align-items-center py-1"><IoCheckmark /> <p className="mb-0">{price.meal}</p></div> : <BsX /> }
                   {price.order ? <div className="d-flex align-items-center py-1"><IoCheckmark /> <p className="mb-0">{price.order}</p></div> : <BsX /> }
                   {price.delevery ? <div className="d-flex align-items-center py-1"><IoCheckmark /> <p className="mb-0">{price.delevery}</p></div> : <BsX /> }
-                  {price.access ? <div className="d-flex align-items-center py-1"><IoCheckmark /> <p className="mb-0 word-wrap-no-wrap">{price.access}</p></div> : <BsX /> }
+                  {price.access ? <div className="d-flex align-items-center py-1"><IoCheckmark /> <p className="mb-0 word-wrap-nowrap">{price.access}</p></div> : <BsX className="mx-1" /> }
               </div>
               <button className="package-btn">Shop Now<span className="packag-btn-icon"><BsSuitDiamondFill /></span></button>
                   </div>

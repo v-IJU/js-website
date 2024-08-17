@@ -3,6 +3,12 @@ import footerLogo from "../assets/images/footer/omnifood-logo-today.png"
 import insta from "../assets/svg/footer/instagram-brands-solid.svg"
 import fb from "../assets/svg/footer/facebook-brands-solid.svg"
 import twitter from "../assets/svg/footer/twitter-brands-solid.svg"
+import galleryImg1 from '../assets/images/gallery/gallery-1.jpg'
+import galleryImg2 from '../assets/images/gallery/gallery-2.jpg'
+import galleryImg3 from '../assets/images/gallery/gallery-3.jpg'
+import galleryImg4 from '../assets/images/gallery/gallery-4.jpg'
+import galleryImg5 from '../assets/images/gallery/gallery-5.jpg'
+import galleryImg6 from '../assets/images/gallery/gallery-6.jpg'
 
 
 export const socialMedia = [insta, fb, twitter]
@@ -28,6 +34,15 @@ export const mealsDetails = [
     {id:1,img:mealsImg[0],category1:"Vegeterian", name:"Japanese Gyozas",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" },
     {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" },
     {id:3,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" }
+]
+
+export const gallery = [
+    {id:1, img:galleryImg1, text:"Lorem dolor ispum sit amet consectetur adipisicing"},
+    {id:2, img:galleryImg2, text:"Lorem dolor ispum sit amet consectetur adipisicing"},
+    {id:3, img:galleryImg3, text:"Lorem dolor ispum sit amet consectetur adipisicing"},
+    {id:4, img:galleryImg4, text:"Lorem dolor ispum sit amet consectetur adipisicing"},
+    {id:5, img:galleryImg5, text:"Lorem dolor ispum sit amet consectetur adipisicing"},
+    {id:6, img:galleryImg6, text:"Lorem dolor ispum sit amet consectetur adipisicing"}
 ]
 
 export const pricing = [

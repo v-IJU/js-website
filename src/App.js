@@ -18,6 +18,9 @@ const App = () => {
         <Home />
       </section>
       <section>
+        <Meals />
+      </section>
+      <section>
         <Gallery />
       </section>
       <section>
