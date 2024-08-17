@@ -17,16 +17,15 @@ const App = () => {
       <section>
         <Home />
       </section>
-/
-      {/* <section>
+      <section>
         <Gallery />
-      </section> */}
-      {/* <section>
+      </section>
+      <section>
         <Pricing />
-      </section> */}
-      {/* <section>
+      </section>
+      <section>
         <Footer />
-      </section> */}
+      </section>
     </div>
   )
 }
