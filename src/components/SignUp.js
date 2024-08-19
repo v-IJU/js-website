@@ -7,7 +7,7 @@ import { FaX } from "react-icons/fa6";
 const MyModalComponent = ({ show, handleClose }) => {
   return (
     <>
-      <Modal show={show} className="modal container-fluid" centered>
+      <Modal show={show} className="signup-modal container-fluid" centered>
         <Modal.Body className="row signup-bg">
           <div className="col-8">
             <Form className=" modal-col1 py-1">

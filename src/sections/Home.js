@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import SignUp from "../components/SignUp";
+import SignUpHome from "../components/SignUpHome";
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -29,13 +30,14 @@ const Home = () => {
           <Nav  show={show} setShow={setShow} handleShow={handleShow} />
         </section>
         <SignUp show={show} handleClose={handleClose}  />
+        <SignUpHome />
 
         <div className="home-content text-white ">
           <p className="Montserrat-alter home-h">
             F<span>OO</span>DTODAY
           </p>
           <p className="home-p1">Discover the best Meals & drinks</p>
-          
+
           <div className="search-container">
             <input
               className="search"
