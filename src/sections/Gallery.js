@@ -24,8 +24,10 @@ console.log(isMouseEnter);
       <div className='col-6 gal-col2'>
         <div className='row row-cols-3 '>
         {gallery.map((gall)=>(
-          <div className='col gal-img-container' key={gall.id}>
-            <img src={gall.img} onMouseEnter={()=>{handleMouseEnter(gall.id)}} onMouseLeave={handleMouseLeave} className='gall-img' alt={`gallery img-${gall.id}`} />
+          <div className='col gal-img-container' key={gall.id} onMouseEnter={()=>{handleMouseEnter(gall.id)}} onMouseLeave={handleMouseLeave}>
+            {/* <div className='gall-overlay'></div> */}
+            <div className={`${isMouseEnter === gall.id ? 'gall-overlay' : ''}`}></div>
+            <img src={gall.img}  className='gall-img' alt={`gallery img-${gall.id}`} />
             <p className={`gal-text ${isMouseEnter === gall.id ? 'text-pop' : ''}`}>{gall.text}</p>
           </div>
         ))}

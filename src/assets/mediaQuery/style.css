@@ -1,8 +1,16 @@
-/* @media (min-width: 319px)  {
+@media (min-width: 319px)  {
     body{
-        background-color: red;
+        /* background-color: red; */
     }
-}
+ }
+
+
+
+
+
+
+
+ /*
 @media (min-width: 425px)  {
     body{
         background-color: green;

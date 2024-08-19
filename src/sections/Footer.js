@@ -14,8 +14,10 @@ const Footer = () => {
         <React.Fragment>
           <img src={list.logo} className="footer-logo" alt="footer-logo" />
           <div className="d-flex ps-3 py-4 my-2">
-            {list.icons?.map((icon, index) => (
-              <img key={index} src={icon} className="social-icon" alt="social-icon" />
+            {list.icons?.map((icon) => (
+              <a key={icon.id} href={icon.link} target="_blank">
+                <img  src={icon.icon} className="social-icon" alt="social-icon" />
+              </a>
             ))}
           </div>
         </React.Fragment>
@@ -26,8 +28,8 @@ const Footer = () => {
           <p className="footer-title ">{list.title}</p>
           {list.place && <p className="footer-place word-wrap-nowrap mb-0">{list.place}</p>}
           {list.place2 && <p className="footer-place">{list.place2}</p>}
-          {list.phone && <p className="footer-contct mb-0 pt-2">{list.phone}</p>}
-          {list.mail && <p className="footer-contct">{list.mail}</p>}
+          {list.phone && <a href="tel:4152016370" className="footer-contct mb-0 pt-2 d-block">{list.phone}</a>}
+          {list.mail && <a href="mailto:hello@ominifood.com"  className="footer-contct">{list.mail}</a>}
         </React.Fragment>
       )}
       {list.Navigation && (

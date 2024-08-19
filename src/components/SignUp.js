@@ -63,7 +63,10 @@ const MyModalComponent = ({ show, handleClose }) => {
                       <option value="Please Select4">Please Select4</option>
                       <option value="Please Select5">Please Select5</option>
                     </select>
-                    <RiArrowDropDownLine className="select-custom-icon" />
+                    <label htmlFor="find-us">
+                    <RiArrowDropDownLine htmlFor="find-us" className="select-custom-icon" />
+                    </label>
+                    
                   </div>
                 </Form.Group>
                 <Form.Group className="col ">

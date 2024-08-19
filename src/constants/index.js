@@ -57,7 +57,7 @@ export const pricing = [
 ]
 
 export const footer = [
-    {id:1, logo:footerLogo, icons:[insta, fb, twitter], copyRights :"Copyright"},
+    {id:1, logo:footerLogo, icons:[{id:1, icon:insta, link:"https://www.instagram.com/" }, {id:2, icon:fb, link:"https://www.facebook.com/"}, {id:3, icon:twitter, link:"https://x.com/?lang=en"}], copyRights :"Copyright"},
     {id:2,  title:"Address", place:"623 Harisson st., 2nd Floor,", place2:"San Francisco, CA94107", phone:4152016370, mail:"hello@omnifood.com"},
     {id:3, title:"Navigation", Navigation:[
         {id:1, title:"Create Account", link:"#signUp",},

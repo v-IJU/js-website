@@ -47,7 +47,7 @@ const SignUpHome = () => {
                             <p className="newsletter-p2 mb-0">Subscribe to our newsletters now and stay up-to-date with new collections, the latest books and exclusive offers.</p>
                             <Form>
                                 <input value={email} onChange={(e)=>setEmail(e.target.value)} className="newsletter-email mt-5" type="email" placeholder="Enter your e-mail"name="email"id="email" />
-                                <button  onClick={handleSubscribe} className="btn d-block newsletter-button mb-5" type="button">Subscribe</button>
+                                <button  onClick={handleSubscribe} className="btn d-block newsletter-button mb-5" type="submit">Subscribe</button>
                                 <div className="d-flex newsletter-checkbox">
                                 <input type="checkbox" name="checkbox" id="checkbox" />
                                 <label htmlFor="checkbox">Do not show again</label>
