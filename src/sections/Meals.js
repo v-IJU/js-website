@@ -15,7 +15,7 @@ const Meals = () => {
   }
 
   return (
-    <section className="meals py-5">
+    <section className="meals py-5" id="meals">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-7">

@@ -14,7 +14,7 @@ const handleMouseLeave = () =>{
 console.log(isMouseEnter);
 
   return (
-   <section className='container-fluid gallery pt-1 pb-2'>
+   <section className='container-fluid gallery pt-1 pb-2' id='gallery'>
     <div className='row'>
       <div className='col-6 gal-col1'>
       <p className="mb-1 Ubuntu gallery-h1">MEALS</p>

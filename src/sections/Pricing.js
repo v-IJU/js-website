@@ -6,7 +6,7 @@ import { pricing } from "../constants";
 
 const Pricing = () => {
   return (
-    <section className="container-fluid pricing py-5 my-5">
+    <section className="container-fluid pricing py-5 my-5" id="pricing">
       <div className="row justify-content-center">
         <div className="col-7">
           {pricing.map((list) => (
