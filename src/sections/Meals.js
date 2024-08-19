@@ -25,7 +25,7 @@ const Meals = () => {
             </h1>
             <div className="row gap-5 py-5 justify-content-evenly">
               {mealsDetails.map((list) => (
-                <div className="col meals-container" key={list.id}>
+                <div className="col meals-container" key={list.id} id={list.uniqueId}>
                   <img src={list.img} alt={list.name} className="meals-img" />
                   <div className="meals-content Ubuntu">
                     <div className="d-flex category">

@@ -31,9 +31,12 @@ export const navLinks = [
 ]
 
 export const mealsDetails = [
-    {id:1,img:mealsImg[0],category1:"Vegeterian", name:"Japanese Gyozas",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" },
-    {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" },
-    {id:3,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)" }
+    {id:1,img:mealsImg[0],category1:"Vegeterian", name:"Japanese Gyozas",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:99, uniqueId:"meals1", link:"#meals1"},
+    {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:129, uniqueId:"meals2", link:"#meals2"},
+    {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:129, uniqueId:"meals2", link:"#meals2"},
+    {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:129, uniqueId:"meals2", link:"#meals2"},
+    {id:2,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:129, uniqueId:"meals2", link:"#meals2"},
+    {id:3,img:mealsImg[1],category1:"Vegan", category2:"Paleo", name:"Avocado Salad",calories:"650 Calories",nutriscore:"NutriScore",score:"74",ratings:"4.9 Ratings(544)",price:129, uniqueId:"meals3", link:"#meals3"}
 ]
 
 export const gallery = [

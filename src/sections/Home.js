@@ -2,34 +2,27 @@ import React from "react";
 import { logo } from "../assets/images";
 import Nav from "../components/Nav";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import SignUp from "../components/SignUp";
 import SignUpHome from "../components/SignUpHome";
+import Search from "../components/Search";
 
 const Home = () => {
-  const [query, setQuery] = useState("");
 
-  const handleQuery = (e) => {
-    setQuery(e.target.value);
+
+  const [show, setShow] = useState(false);
+  const handleShow = () => {
+    setShow(true);
   };
-
-  const [show, setShow] = useState(false)
-  const handleShow =() =>{
-    setShow(true)
-  }
   const handleClose = () => setShow(false);
-
-  console.log(query);
 
   return (
     <div>
       <section className="container-fluid home-bg text-center ">
         <div className="home-bg-overlay"></div>
         <section>
-          <Nav  show={show} setShow={setShow} handleShow={handleShow} />
+          <Nav show={show} setShow={setShow} handleShow={handleShow} />
         </section>
-        <SignUp show={show} handleClose={handleClose}  />
+        <SignUp show={show} handleClose={handleClose} />
         <SignUpHome />
 
         <div className="home-content text-white ">
@@ -38,18 +31,7 @@ const Home = () => {
           </p>
           <p className="home-p1">Discover the best Meals & drinks</p>
 
-          <div className="search-container">
-            <input
-              className="search"
-              type="search"
-              onChange={(e) => handleQuery(e)}
-              value={query}
-              placeholder="Search Foods Drinks here..."
-            />
-            <div className="search-icon">
-              <FontAwesomeIcon icon={faSearch} />
-            </div>
-          </div>
+          <Search />
         </div>
 
         <div className="container-fluid logo py-4">
