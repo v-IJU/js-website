@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { TfiLocationPin } from "react-icons/tfi";
 
-const Nav = ({ show, handleShow }) => {
-  console.log(show);
+const Nav = ({handleShow }) => {
 
+  
   return (
+    <section className="nav-section">
     <nav className="navbar navbar-expand-md ">
       <div className="container-fluid">
         {navLinks.map((elements) => (
@@ -55,6 +56,7 @@ const Nav = ({ show, handleShow }) => {
         </button>
       </div>
     </nav>
+    </section>
   );
 };
 

@@ -1,31 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import { logo } from "../assets/images";
-import Nav from "../components/Nav";
-import { useState } from "react";
 import SignUp from "../components/SignUp";
 import SignUpHome from "../components/SignUpHome";
 import Search from "../components/Search";
 
-const Home = () => {
-
-
-  const [show, setShow] = useState(false);
-  const handleShow = () => {
-    setShow(true);
-  };
-  const handleClose = () => setShow(false);
-
+const Home = ({ show, handleClose }) => {
   return (
-    <div>
-      <section className="container-fluid home-bg text-center ">
+    <section className="home-section">
+      <div className="container-fluid home-bg text-center ">
         <div className="home-bg-overlay"></div>
-        <section>
+        {/* <section>
           <Nav show={show} setShow={setShow} handleShow={handleShow} />
-        </section>
+        </section> */}
         <SignUp show={show} handleClose={handleClose} />
         <SignUpHome />
 
-        <div className="home-content text-white ">
+        <div className="home-content text-white">
           <p className="Montserrat-alter home-h">
             F<span>OO</span>DTODAY
           </p>
@@ -48,8 +38,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,64 +1,97 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { mealsDetails } from "../constants/index";
-import { IoFastFood } from "react-icons/io5";
+import api from "../api/data";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await api.get("/recipes", {
+          params: { search: "pizza" },
+        });
+
+        const {
+          data: { recipes },
+        } = response.data;
+
+        setData(recipes);
+      } catch (error) {
+        setError(error);
+        console.log("Error searching recipes:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleQuery = (e) => {
     setQuery(e.target.value);
   };
-  const filteredQuery = mealsDetails.filter((item) =>
-    item.name.toLowerCase().includes(query.toLowerCase())
+
+  const filteredQuery = data.filter((item) =>
+    item.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <section>
-      <div className="search-container">
-        <input
-          className="search"
-          type="search"
-          onChange={handleQuery}
-          value={query}
-          placeholder="Search Foods and Drinks here..."
-        />
-        <div className="search-icon">
-          <FontAwesomeIcon icon={faSearch} />
+      {!loading && (
+        <div className="search-container">
+          <input
+            className="search"
+            type="search"
+            onChange={handleQuery}
+            value={query}
+            placeholder="Search Foods and Drinks here..."
+          />
+          <div className="search-icon">
+            <FontAwesomeIcon icon={faSearch} />
+          </div>
+          <div className="search-results">
+            {query.length >= 2 &&
+              (filteredQuery.length > 0 ? (
+                <div className="search-content">
+                  {filteredQuery.map((item) => (
+                    <ul key={item.id} className=" px-4">
+                      <Link className=" text-decoration-none" target="_blank" to={`recipe/${item.id}`}>
+                        <div className="row py-1 ">
+                          <div className="col-auto">
+                            <img
+                              src={item.image_url}
+                              alt={item.title}
+                              className="search-img"
+                            />
+                          </div>
+                          <div className="col ">
+                            <li className="">
+                              <a className="search-product">{item.title}</a>
+                            </li>
+                            <li className="search-publisher">
+                              <span>Publisher :</span> {item.publisher}
+                            </li>
+                          </div>
+                        </div>
+                      </Link>
+                    </ul>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-center pt-5 fs-5">No Results Found</p>
+              ))}
+          </div>
         </div>
-        <div className="search-results">
-          {query.length >= 2 &&
-            (filteredQuery.length > 0 ? (
-              <div className="search-content">
-                {filteredQuery.map((items) => (
-                  <ul key={items.id}>
-                    <div className="row py-1 ">
-                      <div className="col-auto">
-                        <img src={items.img} className="search-img" />
-                      </div>
-                      <div className="col">
-                        <li className="">
-                          <a className="search-product" href={items.link}>
-                            {items.name}
-                          </a>
-                        </li>
-                        <li className="fs-5">
-                          <span >Price :</span> {items.price}
-                          <span className="px-1">$</span>{" "}
-                        </li>
-                      </div>
-                    </div>
-                  </ul>
-                ))}
-              </div>
-            ) : (
-              query.length >= 2 && (
-                <p className="text-center pt-5">No Results Found</p>
-              )
-            ))}
-        </div>
-      </div>
+      )}
+      {loading && <p className="text-center pt-5 fs-5">Loading...</p>}
+      {error && <p className="text-center pt-5 fs-5">Error: {error.message}</p>}
     </section>
   );
 };

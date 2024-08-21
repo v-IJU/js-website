@@ -18,7 +18,6 @@ const SignUpHome = () => {
     return () => clearTimeout(loading);
   }, []);
 
-  console.log(showModal);
 
   const handleSubscribe = () =>{
     if(email)

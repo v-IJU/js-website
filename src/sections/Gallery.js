@@ -11,7 +11,6 @@ const handleMouseLeave = () =>{
   setIsMOuseEnter("")
 }
 
-console.log(isMouseEnter);
 
   return (
    <section className='container-fluid gallery pt-1 pb-2' id='gallery'>
