@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { TfiLocationPin } from "react-icons/tfi";
+import { MdBookmarkBorder } from "react-icons/md";
 
 const Nav = ({handleShow }) => {
 
@@ -50,6 +51,11 @@ const Nav = ({handleShow }) => {
                 : []
             )}
           </ul>
+          
+          <a className="nav-bookmark " href="#">
+                  <MdBookmarkBorder className=" nav-bookmark-icon" />
+                </a>
+     
         </div>
         <button className="sign-up" type="button" onClick={handleShow}>
           Sign Up

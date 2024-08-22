@@ -1,31 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { mealsDetails } from "../constants";
 import { LiaFireSolid } from "react-icons/lia";
 import { CiMedicalCase } from "react-icons/ci";
 import { TbCircleLetterR } from "react-icons/tb";
 import { IoStarHalfSharp } from "react-icons/io5";
 import { CgArrowLongRight } from "react-icons/cg";
+import { MyLoaderMeals } from "../components/Loader";
 
 const Meals = () => {
 
   const [isClicked, setIsClicked] = useState(false)
+  const [loading, setLoading] = useState(false)
+
 
   const handleMealsClicked = () =>{
     setIsClicked(true)
   }
+  useEffect (()=>{
+    setLoading(true)
+    setTimeout(()=>setLoading(true),)
+  },[])
 
   return (
-    <section className="meals py-5" id="meals">
+    <section className="meals py-5 mt-5" id="meals">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-7">
-            <p className="mb-1 Ubuntu meals-h1">MEALS</p>
+            <p className="mb-3 Ubuntu meals-h1">MEALS</p>
             <h1 className="Poppins meals-h2">
               Omnifood AI choose from 5,000+ recipies
             </h1>
-            <div className="row gap-5 py-5 justify-content-evenly">
+            <div className="row gap-3 py-5 justify-content-evenly">
               {mealsDetails.map((list) => (
-                <div className="col meals-container" key={list.id} id={list.uniqueId}>
+                <div className="col meals-container mx-3 borderr" key={list.id} id={list.uniqueId}>
+                  {!loading ? (
+                  <div>
                   <img src={list.img} alt={list.name} className="meals-img" />
                   <div className="meals-content Ubuntu">
                     <div className="d-flex category">
@@ -54,6 +63,8 @@ const Meals = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+                ) : (<MyLoaderMeals />) }
                 </div>
               ))}
             <button className="btn meals-btn" onClick={handleMealsClicked}>

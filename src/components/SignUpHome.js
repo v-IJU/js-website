@@ -12,7 +12,7 @@ const SignUpHome = () => {
 
   useEffect(() => {
     const loading = setTimeout(() => {
-      setShowModal(true);
+      setShowModal(false);
     }, 200);
 
     return () => clearTimeout(loading);
