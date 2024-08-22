@@ -40,17 +40,17 @@ const Recipe = () => {
         <div>
           <div
             className="recipe-img-container"
-            style={{
-              backgroundImage:
+            // style={{
+            //   backgroundImage:
                
-                 `url(${recipeList?.recipe?.image_url})`
-            }}
+            //      `url(${recipeList?.recipe?.image_url})`
+            // }}
           >
-            {/* <img
+            <img
               src={recipeList?.recipe?.image_url}
               className="recipe-img"
               alt={recipeList?.recipe?.title}
-            /> */}
+            />
             <div className="recipe-img-overlay"></div>
           </div>
           <div className=" recipe-container text-center">
@@ -89,7 +89,7 @@ const Recipe = () => {
                   </h3>
                   <div className="row row-cols-2">
                     {recipeList?.recipe?.ingredients.map((ingredient) => (
-                      <div className="col d-flex mb-3 px-0">
+                      <div className="col d-flex mb-3 px-2">
                         <div>
                           <IoCheckmark className="recipe-inceredient-icon" />
                         </div>
@@ -117,6 +117,11 @@ const Recipe = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+      {loading && (
+        <div className="loading-container">
+          <p>Loading...</p>
         </div>
       )}
     </section>
