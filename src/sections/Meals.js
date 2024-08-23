@@ -7,19 +7,14 @@ import { IoStarHalfSharp } from "react-icons/io5";
 import { CgArrowLongRight } from "react-icons/cg";
 import { MyLoaderMeals } from "../components/Loader";
 
-const Meals = () => {
+const Meals = ( {loading} ) => {
 
   const [isClicked, setIsClicked] = useState(false)
-  const [loading, setLoading] = useState(false)
-
-
+  
+  
   const handleMealsClicked = () =>{
     setIsClicked(true)
   }
-  useEffect (()=>{
-    setLoading(true)
-    setTimeout(()=>setLoading(true),)
-  },[])
 
   return (
     <section className="meals py-5 mt-5" id="meals">
@@ -32,7 +27,7 @@ const Meals = () => {
             </h1>
             <div className="row gap-3 py-5 justify-content-evenly">
               {mealsDetails.map((list) => (
-                <div className="col meals-container mx-3 borderr" key={list.id} id={list.uniqueId}>
+                <div className="col meals-container mx-3" key={list.id} id={list.uniqueId}>
                   {!loading ? (
                   <div>
                   <img src={list.img} alt={list.name} className="meals-img" />

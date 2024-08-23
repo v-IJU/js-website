@@ -5,12 +5,13 @@ import { AiOutlineMinusCircle } from "react-icons/ai";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { IoCheckmark } from "react-icons/io5";
 import { RiArrowRightLine } from "react-icons/ri";
-import { MdBookmarkBorder } from "react-icons/md";
+import { MdBookmarkBorder,MdBookmark } from "react-icons/md";
 import api from "../api/data";
 import { useParams } from "react-router-dom";
+import { MyLoaderIng, MyLoaderRecpImg, MyLoaderRecpTitle } from "./Loader";
 // import { MyLoader } from "./Loader";
 
-const Recipe = () => {
+const Recipe = ( {bookmark, setBookmark} ) => {
   const [recipeList, setRecipeList] = useState(null);
   const [recipeError, setRecipeError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -29,12 +30,43 @@ const Recipe = () => {
         setRecipeError(error);
         console.log(`Error in fetching Recipe`, error);
       } finally {
-        // setTimeout(()=>setLoading(false),000)
+        // setTimeout(()=>setLoading(true),8000)
         setLoading(false);
       }
     };
     fetchData();
   }, [id]);
+
+
+  
+  useEffect(() => {
+    try {
+      const savedBookmark = localStorage.getItem("bookmark");
+      if (savedBookmark) {
+        const parsedBookmark = JSON.parse(savedBookmark);
+        setBookmark(parsedBookmark);
+      } else {
+        console.log("No bookmarks found");
+        setBookmark([]);
+      }
+    } catch (error) {
+      console.log("Error in bookmark:", error);
+      setBookmark([]);
+    }
+  }, [setBookmark]);
+  
+  const handleBookmark = (id) => {
+    if (!bookmark.includes(id)) {
+      const updatedBookmark = [...bookmark, id];
+      setBookmark(updatedBookmark);
+      localStorage.setItem('bookmark', JSON.stringify(updatedBookmark));
+    } else {
+      const updatedBookmark = bookmark.filter((bookmarkId) => bookmarkId !== id);
+      setBookmark(updatedBookmark);
+      localStorage.setItem('bookmark', JSON.stringify(updatedBookmark));
+    }
+  };
+  
 
   const handleCountInc = () => {
     setServings(servings + 1);
@@ -46,19 +78,29 @@ const Recipe = () => {
   return (
     <section className="container-fluid recipe">
       <div>
-        <div className="recipe-img-container">
-          <img
-            src={recipeList?.recipe?.image_url}
-            className="recipe-img"
-            alt={recipeList?.recipe?.title}
-          />
-          <div className="recipe-img-overlay"></div>
-        </div>
-        <div className=" recipe-container text-center">
-          {/* <div className="recipe-contaainer-overlay"></div> */}
-          <div className="skewy-div text-center">
-            <h2>{recipeList?.recipe?.title}</h2>
+        {loading ? (
+          <MyLoaderRecpImg />
+        ) : (
+          <div className="recipe-img-container">
+            <img
+              src={recipeList?.recipe?.image_url}
+              className="recipe-img"
+              alt={recipeList?.recipe?.title}
+            />
+
+            <div className="recipe-img-overlay"></div>
+            <div className="skewy-div text-center">
+            {loading ? (
+              <MyLoaderRecpTitle />
+            ) : (
+              <h2>{recipeList?.recipe?.title}</h2>
+            )}
           </div>
+          </div>
+        )}
+        <div className=" recipe-container text-center">
+          <div className="recipe-contaainer-overlay"></div>
+        
           <div>
             <div className="container recipe-ingredient-container d-flex align-items-center py-4 my-2 mt-5">
               <div className=" d-flex align-items-center">
@@ -83,20 +125,33 @@ const Recipe = () => {
                   <AiOutlinePlusCircle className="recipe-details-icon" />
                 </button>
               </div>
-              <a className="recipe-bookmark ms-auto" href="#">
-                <MdBookmarkBorder className=" recipe-bookmark-icon" />
-              </a>
+              <button
+                className="recipe-bookmark ms-auto"
+                onClick={() => handleBookmark(recipeList?.recipe?.id)}
+              >
+                {bookmark.includes(recipeList?.recipe?.id) ? (
+                  <MdBookmark className="recipe-bookmark-icon" />
+                ) : (
+                  <MdBookmarkBorder className="recipe-bookmark-icon" />
+                )}
+              </button>
             </div>
             <div className="recipe-incredients py-5">
               <div className="container recipe-ingredient-container">
                 <h3 className="incredients-h mb-4 pb-2">RECIPE INGREDIENTS</h3>
                 <div className="row row-cols-2 row-cols-xxl-4">
                   {recipeList?.recipe?.ingredients.map((ingredient) => (
-                    <div className="col d-flex mb-3 px-2 text-start">
-                      <div>
-                        <IoCheckmark className="recipe-inceredient-icon" />
-                      </div>
-                      <p>{ingredient?.description}</p>
+                    <div className="col  mb-3 px-2 text-start">
+                      {loading ? (
+                        <MyLoaderIng />
+                      ) : (
+                        <div className="d-flex">
+                          <div>
+                            <IoCheckmark className="recipe-inceredient-icon" />
+                          </div>
+                          <p>{ingredient?.description}</p>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

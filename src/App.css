@@ -110,12 +110,14 @@
 /*  SEARCH */
 
 .search-container {
-  width: 100%;
+  width: 48%;
   height: 100%;
+  margin: 0 auto;
   position: relative;
 }
+
 .search-results {
-  width: 47%;
+  width: 100%;
   margin: auto;
   text-align: start;
   position: relative;
@@ -141,14 +143,14 @@
   text-decoration: none !important;
 }
 .search {
-  width: 48%;
+  width: 100%;
   padding: 10px 45px;
   border-radius: 10px;
 }
 .search-icon {
   color: gray;
   position: absolute;
-  left: 27.2%;
+  left: 2%;
   top: 13px;
 }
 .search-content .row {
@@ -221,6 +223,7 @@
   background: linear-gradient(120deg, #f8b57e, #e67e22);
   display: grid;
   place-content: center;
+  border: none;
   border-radius: 10px;
   position: relative;
   z-index: 5;
@@ -801,7 +804,7 @@
 .skewy-div {
   z-index: 25;
   position: absolute;
-  top: -9.9%;
+  bottom: -9.9%;
   left: 50%;
   left: 50%;
   transform: translateX(-50%) skewY(-5deg);
@@ -821,7 +824,7 @@
   margin-left: 5px !important;
   padding: 0 !important;
   margin: 0 ;
-
+  background-color: white !important;
 }
 .recipe-details-icon {
   font-size: 20px;
@@ -833,9 +836,16 @@
   background: linear-gradient(120deg, #f8b57e, #f88366);
   display: grid;
   place-content: center;
+  border: none;
   border-radius: 100%;
   position: relative;
   z-index: 5;
+}
+.bookmark-pop{
+  position: absolute;
+  top: -20px;
+  left: -23px;
+
 }
 .recipe-bookmark-icon {
   font-size: 24px;
@@ -889,4 +899,14 @@
   place-content: center;
   position: relative;
   z-index: 999;
+}
+
+/* BOOKMARK */
+
+.bookmark{
+  position: relative;
+  height: 100vh;
+  z-index: 55;
+  display: grid;
+  place-content: center;
 }
