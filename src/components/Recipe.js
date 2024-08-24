@@ -30,7 +30,7 @@ const Recipe = ( {bookmark, setBookmark} ) => {
         setRecipeError(error);
         console.log(`Error in fetching Recipe`, error);
       } finally {
-        // setTimeout(()=>setLoading(true),8000)
+        // setTimeout(()=>setLoading(false),8000)
         setLoading(false);
       }
     };
